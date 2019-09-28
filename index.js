@@ -1,9 +1,7 @@
 'use strict'
 
-exports.name = 'foo'
-exports.inputFormats = ['foo', 'foobar']
+exports.name = 'datauri'
+exports.inputFormats = ['html']
 exports.outputFormat = 'html'
 
-exports.render = function (str) {
-  return str
-}
+exports.render = require('datauri').sync
