@@ -1,6 +1,6 @@
 {
   "name": "jstransformer-datauri",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "DataURI support for JSTransformers.",
   "keywords": [
     "jstransformer"

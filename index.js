@@ -13,7 +13,7 @@ exports.renderAsync = url => {
   if (!resize) return require('datauri')(url)
 
   const r = resize[0].replace(':','').split('x')
-  return require('sharp')(url.replace(resize[0], '')).resize(parseInt(r[0]), parseInt([1])).toBuffer().then(x =>
+  return require('sharp')(url.replace(resize[0], '')).resize(parseInt(r[0]), parseInt(r[1])).toBuffer().then(x =>
     parser.format('.png', x)
   ).then(x => x.content)
 }
@@ -22,5 +22,4 @@ exports.render = url =>
   String(require('child_process').execSync(`node ${__filename} ${url}`))
 
 
-if (process.argv[2]) exports.renderAsync(process.argv[2])
-  .then(console.log).then(() => process.exit(0))
+if (process.argv[2]) exports.renderAsync(process.argv[2]).then(console.log)
