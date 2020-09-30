@@ -23,7 +23,15 @@ Converts file into [DataURI](https://en.wikipedia.org/wiki/Data_URI_scheme) repr
 var datauri = require('jstransformer')(require('jstransformer-datauri'))
 
 datauri.render('./Octocat.png').body.slice(0, 100)
-//=> data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAKZCAYAAABAwk9hAAB/FUlEQVR4AezBMQEAAAjAIJvM/imt4Q...
+//=> data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAyAAAAKZCAYAAABAwk9hAAB/FUlEQVR4AezBMQEAAAjAIJvM/imt4Q
+```
+
+## Optional resize
+```js
+var datauri = require('jstransformer')(require('jstransformer-datauri'))
+
+datauri.render('./Octocat.png:10x10').body
+//=> data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAMklEQVQI12NQU5DjUDUw5dIzMAxf2ttwYOfMjr97Znf9WdBZc0pBQd6cjZWbUUNVlRMAH8sNpOmtCWUAAAAASUVORK5CYII=
 ```
 
 ## License
