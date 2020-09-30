@@ -17,3 +17,10 @@ exports.renderAsync = url => {
     parser.format('.png', x)
   ).then(x => x.content)
 }
+
+exports.render = url =>
+  String(require('child_process').execSync(`node ${__filename} ${url}`))
+
+
+if (process.argv[2]) exports.renderAsync(process.argv[2])
+  .then(console.log).then(() => process.exit(0))
